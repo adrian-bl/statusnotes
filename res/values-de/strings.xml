@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<resources>
+	<string name="app_action">Neue Notitz</string>
+	
+	<string name="dlg_remove_title">Löschen</string>
+	<string name="dlg_remove_message">Wollen sie diese Notitz wirklich löschen?</string>
+	<string name="button_yes">Ja</string>
+	<string name="button_no">Nein</string>
+	<string name="button_remove">Löschen</string>
+	<string name="button_update">Updaten</string>
+	<string name="button_cancel">Abbrechen</string>
+	<string name="button_save">Speichern</string>
+
+	<string name="generic_saved">gespeichert</string>
+	<string name="generic_notxt">Notitz nicht erstellt - kein Text</string>
+	
+	<string name="menu_manage">Manage notes</string>
+	<string name="menu_save_as_new">Als neu speichern</string>
+	<string name="menu_about">Über</string>
+	
+	<string name="title_create_note">Neue Notitz erstellen</string>
+	<string name="title_update_note">Notitz bearbeiten</string>
+	
+</resources>

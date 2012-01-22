@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content"
+                android:padding="5dip" >
+
+	<ImageButton android:id="@+id/iconpicker" android:layout_width="48dip" android:layout_height="48dip" android:scaleType="fitCenter" 
+		android:text="" android:onClick="IconPicker" android:padding="8dip" android:layout_marginRight="4dip"/>
+
+	<EditText android:id="@+id/usertitle" android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:capitalize="sentences" android:padding="4dip"
+			android:text="" android:singleLine="true" android:layout_toRightOf="@+id/iconpicker" />
+
+	<EditText android:id="@+id/usertext" android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:capitalize="sentences" android:padding="4dip" android:layout_marginTop="2dip"
+			android:text="" android:maxLines="7"      android:layout_below="@id/usertitle"/>
+	
+	<TextView android:id="@+id/lhook" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/usertext"
+	  android:layout_alignParentRight="true" android:text="" />
+	
+	
+	<!-- new note buttons //-->
+	<Button android:id="@+id/create" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_save" android:onClick="AddNewNote"
+		android:layout_alignTop="@id/lhook"
+	/>
+	
+	<Button android:id="@+id/cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_cancel" android:onClick="CancelNote" 
+		 android:layout_alignTop="@id/lhook" android:layout_toLeftOf="@id/lhook"
+	/>
+	
+	
+	<!-- on update //-->
+	<Button android:id="@+id/update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_update" android:onClick="UpdateExistingNote"
+		android:layout_alignTop="@id/lhook"
+	/>
+	<Button android:id="@+id/remove" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/button_remove" android:onClick="RemoveNote"
+		android:layout_toLeftOf="@id/cancel" android:layout_alignTop="@id/lhook"
+	/>
+	
+	
+	<!-- DEBUG //-->
+	<!--
+	<Button android:id="@+id/debug" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DEBUG" android:onClick="DebugAction"
+		android:layout_below="@id/cancel"
+	/>
+	//-->
+
+</RelativeLayout>
+
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_vers">1.0</string>
+	<string name="app_name">Status Notes</string>
+	<string name="app_action">New Note</string>
+	
+	<string name="dlg_remove_title">Remove note</string>
+	<string name="dlg_remove_message">Do you really want to remove this note?</string>
+	
+	<string name="button_yes">Yes</string>
+	<string name="button_no">No</string>
+	<string name="button_remove">Remove note</string>
+	<string name="button_update">Update note</string>
+	<string name="button_cancel">Cancel</string>
+	<string name="button_save">Save note</string>
+	
+	<string name="generic_saved">saved</string>
+	<string name="generic_notxt">Note not created - no text</string>
+	
+	<string name="menu_manage">Manage notes</string>
+	<string name="menu_save_as_new">Save as new</string>
+	<string name="menu_about">About</string>
+	
+	<string name="title_create_note">Create new note</string>
+	<string name="title_update_note">Edit note</string>
+
+	
+</resources>
