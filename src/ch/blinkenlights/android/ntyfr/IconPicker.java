@@ -55,7 +55,7 @@ public class IconPicker extends Activity {
 			if (conv_view == null) {
 				i = new ImageView(IconPicker.this);
 				i.setScaleType(ImageView.ScaleType.FIT_CENTER);
-				i.setLayoutParams(new GridView.LayoutParams(32,32));
+				i.setLayoutParams(new GridView.LayoutParams(48,48));
 			}
 			else {
 				i = (ImageView) conv_view;
