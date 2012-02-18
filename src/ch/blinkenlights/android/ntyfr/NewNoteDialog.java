@@ -49,6 +49,7 @@ public class NewNoteDialog extends Activity {
 	private NoteUtil            note_util;
 	private final static int    ACT_ICON_PICKER = 1;
 	private static int          needs_init      = 1;
+	private static int          rnd_icon_max    = 3;  /* random icon is between 0-3 */
 	int current_nid = 0;
 	int current_icn = 0;
 	
@@ -94,7 +95,7 @@ public class NewNoteDialog extends Activity {
 			
 			if(current_nid == 0) {
 				setTitle(R.string.title_create_note);
-				SetCurrentIcon(0);
+				SetCurrentIcon( GetRandomIcon(rnd_icon_max) );
 			}
 			else {
 				setTitle(R.string.title_update_note);
@@ -143,6 +144,12 @@ public class NewNoteDialog extends Activity {
 			default:
 				return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	/* Returns a random icon - the current time is good enough */
+	private int GetRandomIcon(int max) {
+		int nowtime = (int)(System.currentTimeMillis() / 1000L);
+		return ( nowtime%(max+1) );
 	}
 	
 	private void SetCurrentIcon(int icon_id) {
