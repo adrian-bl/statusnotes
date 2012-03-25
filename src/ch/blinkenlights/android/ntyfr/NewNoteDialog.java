@@ -47,6 +47,7 @@ public class NewNoteDialog extends Activity {
 	
 	private NotificationManager notify_manager;
 	private NoteUtil            note_util;
+	private ConfigUtil          config_util;
 	private final static int    ACT_ICON_PICKER = 1;
 	private static int          needs_init      = 1;
 	private static int          rnd_icon_max    = 3;  /* random icon is between 0-3 */
@@ -62,6 +63,7 @@ public class NewNoteDialog extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		note_util      = new NoteUtil(getApplicationContext());
+		config_util    = new ConfigUtil(getApplicationContext());
 		notify_manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		current_nid    = getIntent().getIntExtra("nid",0);
 		
@@ -70,9 +72,9 @@ public class NewNoteDialog extends Activity {
 		 */
 		if(current_nid <= 0 && needs_init == 1) {
 			LoadAllNotes();
+			config_util.UpdateNewNoteShortcut();
 		}
 		needs_init = 0;
-		
 		
 		/* --> all notes are now initialized <-- */
 		
@@ -107,6 +109,7 @@ public class NewNoteDialog extends Activity {
 				SetCurrentIcon( (Integer)this_note.get(1) );                                  // icon
 			}
 		}
+		
 	}
 	
 	@Override
