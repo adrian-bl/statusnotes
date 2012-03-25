@@ -1,1 +1,1 @@
-android update project -p . -t android-7
+android update project -p . -t android-10

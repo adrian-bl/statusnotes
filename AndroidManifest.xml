@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="ch.blinkenlights.android.ntyfr"
-      android:versionCode="1327255896"
-      android:versionName="0.9">
-    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="7" />
+      android:versionCode="1329552966"
+      android:versionName="0.91">
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="10" />
     <application android:label="@string/app_name"
                  android:icon="@drawable/icon" >
 
