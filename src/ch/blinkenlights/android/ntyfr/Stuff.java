@@ -68,7 +68,8 @@ public class Stuff extends Activity {
 			return; /* early return */
 		}
 		
-		long fake_time    = android.os.Build.VERSION.SDK_INT >= 9 ? -Long.MAX_VALUE : Long.MAX_VALUE;
+		int  sdkv         = android.os.Build.VERSION.SDK_INT;
+		long fake_time    = (sdkv >= 9 && sdkv <= 13)  ? -Long.MAX_VALUE : Long.MAX_VALUE;
 		
 		RemoteViews rview = new RemoteViews(xCtx.getPackageName(), R.layout.shortcut_notification);
 		Notification n    = new Notification(R.drawable.trans, null, 0);
@@ -82,7 +83,14 @@ public class Stuff extends Activity {
 		n.contentView   = rview;
 		n.contentIntent = xpi;
 		n.when          = fake_time;  // pushes notification to the right corner
-		n.flags        |= Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
+		n.flags        |= Notification.FLAG_NO_CLEAR;
+		
+		if(sdkv < 15) {
+			/* Only set for pre-android 4.x:
+			   This setting causes Android 4 to place us on the left */
+			n.flags |= Notification.FLAG_ONGOING_EVENT;
+		}
+		
 		
 		notify_manager.notify(SHORTCUT_NID, n);
 		
