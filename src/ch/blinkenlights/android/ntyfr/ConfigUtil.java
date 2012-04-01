@@ -17,21 +17,26 @@ import android.content.Intent;
 import android.app.PendingIntent;
 import android.widget.RemoteViews;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 
 public class ConfigUtil {
 	private static int SHORTCUT_NID = -1;
 	private Context ctx;
+	private SharedPreferences prefs;
 	
 	public ConfigUtil(Context c) {
 		ctx = c;
+		prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 	}
 	
 	public boolean ShowNoteShortcut() {
-		return true;
+		return prefs.getBoolean("showShortcut", false);
 	}
 	
-	public boolean StartAtBoot() {
-		return true;
+	public boolean ShowRandomIcon() {
+		return prefs.getBoolean("selectRandomAll", false);
 	}
 	
 	
