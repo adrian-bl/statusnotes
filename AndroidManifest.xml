@@ -20,6 +20,9 @@
                 android:theme="@android:style/Theme.Dialog">
         </activity>
 
+        <activity android:name=".ConfigDialog">
+        </activity>
+
     <receiver
         android:name=".OnBootReceiver"
         android:enabled="true"
