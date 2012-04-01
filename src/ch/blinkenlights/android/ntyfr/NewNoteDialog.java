@@ -73,7 +73,7 @@ public class NewNoteDialog extends Activity {
 		 */
 		if(current_nid <= 0 && needs_init == 1) {
 			LoadAllNotes();
-			stuff_util.UpdateNewNoteShortcut();
+			stuff_util.UpdateNewNoteShortcut(); /* Also called by DisplayNote but there might be no notes (yet) */
 		}
 		needs_init = 0;
 		
@@ -284,6 +284,7 @@ public class NewNoteDialog extends Activity {
 			n.setLatestEventInfo(this, this_title, this_body, ViewNoteIntent(nid));
 			n.flags = Notification.FLAG_NO_CLEAR;
 			notify_manager.notify(nid,n);
+			stuff_util.UpdateNewNoteShortcut(); /* Extrawurst for Android 4.x: pushes it upwards */
 		}
 	}
 	
