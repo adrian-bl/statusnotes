@@ -50,7 +50,6 @@ public class NewNoteDialog extends Activity {
 	private ConfigUtil          config_util;
 	private final static int    ACT_ICON_PICKER = 1;
 	private static int          needs_init      = 1;
-	private static int          rnd_icon_max    = 3;  /* random icon is between 0-3 */
 	int current_nid = 0;
 	int current_icn = 0;
 	
@@ -97,7 +96,15 @@ public class NewNoteDialog extends Activity {
 			
 			if(current_nid == 0) {
 				setTitle(R.string.title_create_note);
-				SetCurrentIcon( GetRandomIcon(rnd_icon_max) );
+				
+				int rnd_max = -1; /* random starts at 0, IconCount at 1 */
+				if(config_util.ShowRandomIcon() == true) {
+					rnd_max += (new Stuff(getApplicationContext()).getIconCount());
+				} else {
+					rnd_max += (new Stuff(getApplicationContext()).getDotIconCount());
+				}
+				
+				SetCurrentIcon( GetRandomIcon(rnd_max) );
 			}
 			else {
 				setTitle(R.string.title_update_note);
@@ -139,6 +146,10 @@ public class NewNoteDialog extends Activity {
 		switch (item.getItemId()) {
 			case R.id.menu_about:
 				(new Stuff(this)).ShowAboutDialog();
+				return true;
+			case R.id.menu_settings:
+				Intent cI = new Intent(NewNoteDialog.this, ConfigDialog.class);
+				startActivity(cI);
 				return true;
 			case R.id.menu_save_as_new:
 				AddNewNote();
