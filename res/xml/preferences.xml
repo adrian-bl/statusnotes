@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-        <PreferenceCategory
-                android:title="First Category">
                 <CheckBoxPreference
                         android:title="Shortcut azeige"
                         android:defaultValue="false"
@@ -12,5 +10,4 @@
                         android:defaultValue="false"
                         android:summary="Waehlt es zuefaelligs icon (default: dots)"
                         android:key="selectRandomAll" />
-        </PreferenceCategory>
 </PreferenceScreen>
