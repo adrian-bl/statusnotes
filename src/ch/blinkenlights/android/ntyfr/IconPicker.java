@@ -68,7 +68,7 @@ public class IconPicker extends Activity {
 		
 		
 		public final int getCount() {
-			return 68;
+			return (new Stuff(getApplicationContext()).getIconCount());
 		}
 		
 		public final Object getItem(int pos) {

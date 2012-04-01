@@ -40,6 +40,17 @@ public class Stuff extends Activity {
 	}
 	
 	
+	/* total amount of all icons */
+	public final int getIconCount() {
+		return 68;
+	}
+	
+	/* total amount of 'dot' icons */
+	public final int getDotIconCount() {
+		return 4;
+	}
+	
+	
 	public void ShowAboutDialog() {
 		Resources res = xCtx.getResources();
 		TextView msg  = new TextView(xCtx);
