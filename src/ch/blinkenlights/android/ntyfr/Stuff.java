@@ -26,9 +26,18 @@ import android.text.Spanned;
 import android.text.util.Linkify;
 import android.text.method.LinkMovementMethod;
 
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Intent;
+import android.app.PendingIntent;
+import android.widget.RemoteViews;
+
+
 public class Stuff extends Activity {
 	
 	private Context xCtx;
+	private static int SHORTCUT_NID = -1;
 	
 	@Override
 	public void onCreate(Bundle si) {
@@ -48,6 +57,35 @@ public class Stuff extends Activity {
 	/* total amount of 'dot' icons */
 	public final int getDotIconCount() {
 		return 4;
+	}
+	
+	public void UpdateNewNoteShortcut() {
+		NotificationManager notify_manager = (NotificationManager) xCtx.getSystemService(xCtx.NOTIFICATION_SERVICE);
+		
+		notify_manager.cancel(SHORTCUT_NID);
+		
+		if( (new ConfigUtil(xCtx)).ShowNoteShortcut() == false ) {
+			return; /* early return */
+		}
+		
+		long fake_time    = android.os.Build.VERSION.SDK_INT >= 9 ? -Long.MAX_VALUE : Long.MAX_VALUE;
+		
+		RemoteViews rview = new RemoteViews(xCtx.getPackageName(), R.layout.shortcut_notification);
+		Notification n    = new Notification(R.drawable.trans, null, 0);
+		Intent xintent    = new Intent(xCtx, NewNoteDialog.class);
+		PendingIntent xpi = PendingIntent.getActivity(xCtx, 0, xintent, 0);
+		
+		rview.setImageViewResource(R.id.image, R.drawable.plus);
+		rview.setTextViewText(R.id.title, "New note");
+		rview.setTextViewText(R.id.text, "Click here to create a new note.");
+		
+		n.contentView   = rview;
+		n.contentIntent = xpi;
+		n.when          = fake_time;  // pushes notification to the right corner
+		n.flags        |= Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
+		
+		notify_manager.notify(SHORTCUT_NID, n);
+		
 	}
 	
 	
