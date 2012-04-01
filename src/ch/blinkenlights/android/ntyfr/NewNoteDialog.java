@@ -48,6 +48,7 @@ public class NewNoteDialog extends Activity {
 	private NotificationManager notify_manager;
 	private NoteUtil            note_util;
 	private ConfigUtil          config_util;
+	private Stuff               stuff_util;
 	private final static int    ACT_ICON_PICKER = 1;
 	private static int          needs_init      = 1;
 	int current_nid = 0;
@@ -63,6 +64,7 @@ public class NewNoteDialog extends Activity {
 		
 		note_util      = new NoteUtil(getApplicationContext());
 		config_util    = new ConfigUtil(getApplicationContext());
+		stuff_util     = new Stuff(getApplicationContext());
 		notify_manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		current_nid    = getIntent().getIntExtra("nid",0);
 		
@@ -71,7 +73,7 @@ public class NewNoteDialog extends Activity {
 		 */
 		if(current_nid <= 0 && needs_init == 1) {
 			LoadAllNotes();
-			config_util.UpdateNewNoteShortcut();
+			stuff_util.UpdateNewNoteShortcut();
 		}
 		needs_init = 0;
 		
@@ -99,9 +101,9 @@ public class NewNoteDialog extends Activity {
 				
 				int rnd_max = -1; /* random starts at 0, IconCount at 1 */
 				if(config_util.ShowRandomIcon() == true) {
-					rnd_max += (new Stuff(getApplicationContext()).getIconCount());
+					rnd_max += stuff_util.getIconCount();
 				} else {
-					rnd_max += (new Stuff(getApplicationContext()).getDotIconCount());
+					rnd_max += stuff_util.getDotIconCount();
 				}
 				
 				SetCurrentIcon( GetRandomIcon(rnd_max) );

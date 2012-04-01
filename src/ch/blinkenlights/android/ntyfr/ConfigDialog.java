@@ -32,8 +32,8 @@ public class ConfigDialog extends PreferenceActivity {
 			public boolean onPreferenceClick(Preference preference) {
 				Toast.makeText(getBaseContext(), "The custom preference has been clicked", Toast.LENGTH_LONG).show();
 				
-				ConfigUtil cutil = new ConfigUtil(getApplicationContext());
-				cutil.UpdateNewNoteShortcut();
+				Stuff stuff = new Stuff(getApplicationContext());
+				stuff.UpdateNewNoteShortcut();
 				
 				return true;
 			}
