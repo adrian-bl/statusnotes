@@ -18,7 +18,6 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.Preference.OnPreferenceClickListener;
-import android.widget.Toast;
  
 public class ConfigDialog extends PreferenceActivity {
 	@Override
@@ -30,11 +29,8 @@ public class ConfigDialog extends PreferenceActivity {
 		
 		shortcutCallback.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getBaseContext(), "The custom preference has been clicked", Toast.LENGTH_LONG).show();
-				
 				Stuff stuff = new Stuff(getApplicationContext());
 				stuff.UpdateNewNoteShortcut();
-				
 				return true;
 			}
 		});
