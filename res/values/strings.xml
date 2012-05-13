@@ -24,6 +24,12 @@
 	
 	<string name="title_create_note">Create new note</string>
 	<string name="title_update_note">Edit note</string>
-
+	<string name="nbar_help_mknote">Touch here to create a new note</string>
+	
+	<string name="config_nbar_shortcut_title">Enable shortcut</string>
+	<string name="config_nbar_shortcut_desc">Shows a \'create new note\' item in the notification bar</string>
+	
+	<string name="config_allrandom_title">Random icon</string>
+	<string name="config_allrandom_desc">Selects a random icons while creating a new note (selects a random dot if disabled)</string>
 	
 </resources>

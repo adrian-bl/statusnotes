@@ -75,10 +75,11 @@ public class Stuff extends Activity {
 		Notification n    = new Notification(R.drawable.trans, null, 0);
 		Intent xintent    = new Intent(xCtx, NewNoteDialog.class);
 		PendingIntent xpi = PendingIntent.getActivity(xCtx, 0, xintent, 0);
+		Resources xres    = xCtx.getResources();
 		
 		rview.setImageViewResource(R.id.image, R.drawable.plus);
-		rview.setTextViewText(R.id.title, "New note");
-		rview.setTextViewText(R.id.text, "Click here to create a new note.");
+		rview.setTextViewText(R.id.title, xres.getText(R.string.title_create_note) );
+		rview.setTextViewText(R.id.text,  xres.getText(R.string.nbar_help_mknote)  );
 		
 		n.contentView   = rview;
 		n.contentIntent = xpi;
