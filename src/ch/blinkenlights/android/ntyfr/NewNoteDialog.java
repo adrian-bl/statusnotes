@@ -291,7 +291,6 @@ public class NewNoteDialog extends Activity {
 	
 	/* Wipe statusbar and load all notes */
 	private void LoadAllNotes() {
-		int nid = -1;
 		int i   = 0;
 		ArrayList<Integer> allnotes = note_util.GetAllNoteIds();		
 		

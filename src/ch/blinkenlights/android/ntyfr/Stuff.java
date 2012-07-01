@@ -51,7 +51,7 @@ public class Stuff extends Activity {
 	
 	/* total amount of all icons */
 	public final int getIconCount() {
-		return 68;
+		return 70;
 	}
 	
 	/* total amount of 'dot' icons */
@@ -108,6 +108,7 @@ public class Stuff extends Activity {
 			+"<br> CC icons from <a href='http://wefunction.com/2008/07/function-free-icon-set/'>Function Icon Set</a>"
 			+"<br> Icon 56-65 from <a href='http://www.smashingmagazine.com/2010/04/15/the-ultimate-free-web-designer-s-icon-set-750-icons-incl-psd-sources/'>smashingmagazine</a>"
 			+"<br> Icon 34+45 from <a href='http://www.iconfinder.com/browse/iconset/Some_icons_png/#readme'>'Some icons' Icon Set</a>"
+			+"<br> Car icons from <a href='http://cemagraphics.deviantart.com/'>Cemagraphics</a>"
 			+"<br> Everything else is from <a href='http://www.oxygen-icons.org/'>the oxygen iconset</a>"
 			+"<br><br>"
 			+"<h4>Please <a href='https://market.android.com/details?id=ch.blinkenlights.android.donate'>DONATE</a> if you like this application :-)</h4>"
